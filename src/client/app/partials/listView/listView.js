@@ -1,10 +1,11 @@
 
   
   angular.module('listView', ['pickUp.services'])
-  .controller('TimeSelectController', function($scope, $location, GameReq, sharedProps) {
-     
-      $scope.data = {
-        model: null,
-        
+  .controller('ListViewController', function($scope,  GetGames, sharedProps) {
+
+
+      $scope.games = {
+        GetGames.getAllGames()
+        .then
       };
     });

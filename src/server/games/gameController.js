@@ -67,5 +67,14 @@ export default {
       });
 
     
+  },
+  getAllGames: () => {
+    console.log('get all game')
+    db.getAllGames()
+    .then()
+    .catch(err => {
+      console.error('error fetching all games ', err)
+      res.status(500).send('error requesting game');
+    });
   }
 }

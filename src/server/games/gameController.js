@@ -17,7 +17,7 @@ export default {
       sport: gameReq.sport,
       startTime: gameReq.time,
       location: 'Stallings',
-      minPlayers: 6,
+      minPlayers: 2,//change to 2 to stay within economic restrictions
       playRequests: 1,
       smsNums: [{smsNum: smsNum}],
     });

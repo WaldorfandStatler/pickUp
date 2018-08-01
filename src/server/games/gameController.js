@@ -32,11 +32,14 @@ export default {
             return Promise.resolve(foundGame);
           } else {
             
-            foundGame.smsNums.push({smsNum: gameReq.smsNum});
-           
+            foundGame.smsNums.push({smsNum: gameReq.smsNum})
             foundGame.playRequests += 1
+            foundGame.save((err) => {
+              if (err)  console.error(err);
+              return;
+            });
             return Promise.resolve(foundGame)
-              .then(db.addPlayer);
+              // .then(db.addPlayer); 
           }
         } else {
           console.log('game not found. using newGame ');

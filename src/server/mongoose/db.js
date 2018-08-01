@@ -22,18 +22,6 @@ const db = {
     });
   },
 
-  addPlayer: (game) => {
-// make a promise the adds a new phone# a games smsNums array
-
-    return new Promise((resolve, reject) => {
-      // game.update((err, game) => {
-        // if (err) return reject(err);
-        console.log('addPlayer', game);
-        resolve(game);
-      // });
-    });
-  },
-
 };
 
 

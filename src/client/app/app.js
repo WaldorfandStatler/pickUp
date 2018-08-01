@@ -14,7 +14,7 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
       templateUrl: 'app/partials/games/games.html',
       controller: 'GamesController'
     })//;
-    //Thus begins the the fun
+    //Thus begins the fun
     .state('mapView', {
       url: '/mapView',
       templateUrl: 'app/partials/mapView/mapView.html',

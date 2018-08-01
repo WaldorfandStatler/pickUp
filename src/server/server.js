@@ -6,6 +6,7 @@ import gameController from './games/gameController';
 import db from './mongoose/dbConnect';
 
 const app = express();
+
 let clientDir = path.join(__dirname, '../../src/client')
 
 app.use(morgan('dev'));

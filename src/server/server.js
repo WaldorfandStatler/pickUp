@@ -4,7 +4,6 @@ import bodyParser from 'body-parser';
 import path from 'path';
 import gameController from './games/gameController';
 import db from './mongoose/dbConnect';
-// import { index } from './index.js';
 
 const app = express();
 

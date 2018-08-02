@@ -22,6 +22,18 @@ const db = {
     });
   },
 
+  addPlayer: (game, user) => {
+// make a promise the adds a new phone# a games smsNums array
+ console.log(game, user);
+ return game;
+  //   return new Promise((resolve, reject) => {
+  //     game.(    (err, game) => {
+  //       if (err) return reject(err);
+  //       resolve(game);
+  //     });
+  //   });
+  },
+
 };
 
 

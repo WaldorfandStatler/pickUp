@@ -32,13 +32,15 @@ export default {
             return Promise.resolve(foundGame);
           } else {
             
-            foundGame.smsNums.push({smsNum: gameReq.smsNum})
-            foundGame.playRequests += 1
-            foundGame.save((err) => {
-              if (err)  console.error(err);
-              return;
-            });
-            return Promise.resolve(foundGame)
+            // foundGame.smsNums.push({smsNum: gameReq.smsNum})
+            // foundGame.playRequests += 1
+            // foundGame.save((err) => {
+            //   if (err)  console.error(err);
+            //   return;
+            // });
+            return db.addPlayer(foundGame, gameReq.smsNum)
+            // return Game.findByIdAndUpdate(foundGame.id, { $push: { smsNum: gameReq.smsNum } } )
+            // return Promise.resolve(updateGame)
               // .then(db.addPlayer); 
           }
         } else {

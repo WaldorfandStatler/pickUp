@@ -24,11 +24,18 @@ const db = {
 
   addPlayer: (game, num) => {
 // make a promise the adds a new phone# a games smsNums array
- console.log(game.id);
     return new Promise((resolve, reject) => {
       Game.findOneAndUpdate({ _id: game.id }, { $push: { smsNums: num }, $inc: { playRequests: 1 } }, (err, game) => {
         if (err) return reject(err);
         resolve(game);
+      });
+    }).then(updated => {
+      return new Promise((resolve, reject) => {
+        Game.findById(updated.id
+        , (err, game) => {
+          if (err) return reject(err);
+          resolve(game);
+        });
       });
     });
   },

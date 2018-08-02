@@ -33,12 +33,11 @@ export default {
               db.addPlayer(foundGame, smsNum)
               .then(game => {//this should go inside if else chain for found game
                 // check if playRequest > minPlayer
-                console.log(game);
-                
                 console.log('player Count: ', game.playRequests);
                 if (helpers.hasEnoughPlayers(game)) {
                   // send to all the players
                   helpers.forEachPlayer(game, (num) => {
+                    console.log(game);
                     console.log('texting ', num);
                     sms.sendScheduledGame({
                       smsNum: num,

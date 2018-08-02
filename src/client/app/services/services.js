@@ -24,10 +24,12 @@ angular.module('pickUp.services', [])
       url: 'api/games',
       // data: gameReq
     })
-    // .then(function (resp) {
-    //   console.log('POST response data: ', resp.data);
-    //   return resp.data;
-    // });
+    .then( (response) => {
+      console.log(response.data);
+      let data = response.data
+      return data;
+    })
+    .catch((err)=> { console.log("Get games factory is broken", err)})
   };
   return {
     getAllGames: getAllGames

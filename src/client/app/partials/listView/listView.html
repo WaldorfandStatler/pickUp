@@ -1,11 +1,11 @@
-<div ng-controller="ListViewController">
+<div >
     <h1>Game List</h1>
+    <pre>{{$scope.games}}</pre>
     <div class="games">
         <div class="game-table">
-            <div class="game-row" games="$ctrl.games" ng-repeat="game in $ctrlq.games">
-                <div class="game-data">Sport: {{game.game}} at {{game.gameTime}} at {{game.location}} </div>
+            <div class="game-row" games="games" ng-repeat="game in games track by game._id">
+                <div class="game-data">Sport: {{game.sport}} at {{game.startTime}} at {{game.location}} </div>
             </div>
         </div>
     </div>
-    <pre>{{$scope | json}}</pre>
 </div>

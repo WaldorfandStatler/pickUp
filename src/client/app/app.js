@@ -1,4 +1,4 @@
-angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
+angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapView' ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/index');
@@ -15,21 +15,15 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
         controller: 'GamesController'
       }) //;
       //Thus begins the fun
-      .state('mapView', {
-        url: '/mapView',
-        templateUrl: 'app/partials/mapView/mapView.html',
-        controller: 'MapViewController'
-      })
+      // .state('mapView', {
+      //   url: '/mapView',
+      //   templateUrl: 'app/partials/mapView/mapView.html',
+      //   controller: 'MapViewController'
+      // })
       .state('listView', {
         url: '/listView',
-        templateUrl: 'app/partials/listView/listView.html',
         controller: 'ListViewController',
-        // data : 'soccer',
-        resolve: {
-          games: function (GetGames) {
-          return GetGames.getAllGames();;
-          }
-        }
+        templateUrl: 'app/partials/listView/listView.html',
+       
       })
-
   });

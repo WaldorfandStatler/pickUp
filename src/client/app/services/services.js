@@ -45,4 +45,23 @@ angular.module('pickUp.services', [])
       property = val;
     }
   };
-});
+})
+.factory('SearchFields', function($http){
+  var findFields = function(fieldReq) {
+    // console.log('.factory getGames - getAllGames')
+    return $http({
+      method: 'GET',
+      url: 'api/search',
+      query: fieldReq
+    })
+    .then( (response) => {
+      console.log(response.data);
+      let data = response.data
+      return data;
+    })
+    .catch((err)=> { console.log("Error finding fields", err)})
+  };
+  return {
+    findFields: findFields
+  };
+})

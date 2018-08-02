@@ -18,10 +18,11 @@ angular.module('pickUp.services', [])
 })
 .factory('GetGames', function($http) {
   var getAllGames = function() {
+    console.log('.factory getGames - getAllGames')
     return $http({
       method: 'GET',
       url: 'api/games',
-      data: gameReq
+      // data: gameReq
     })
     .then(function (resp) {
       console.log('POST response data: ', resp.data);

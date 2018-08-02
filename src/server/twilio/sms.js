@@ -1,6 +1,6 @@
 import twilio from 'twilio';
 import moment from 'moment';
-// import { TWILIO_NUM, TWILIO_AUTH_TOKEN, TWILIO_SID } from '../../../config';
+import { TWILIO_NUM, TWILIO_AUTH_TOKEN, TWILIO_SID } from '../../../config';
 
 const client = twilio(process.env.TWILIO_SID || TWILIO_SID, process.env.TWILIO_AUTH_TOKEN || TWILIO_AUTH_TOKEN);
 const sms = {

@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-// import { MONGO_URI } from '../../../config';
+import { MONGO_URI } from '../../../config';
 
 mongoose.connect(process.env.MONGO_URI || MONGO_URI);
 const db = mongoose.connection;

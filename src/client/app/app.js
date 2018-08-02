@@ -24,9 +24,10 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
         url: '/listView',
         templateUrl: 'app/partials/listView/listView.html',
         controller: 'ListViewController',
+        // data : 'soccer',
         resolve: {
           games: function (GetGames) {
-            return GetGames.getAllGames();
+          return GetGames.getAllGames();;
           }
         }
       })

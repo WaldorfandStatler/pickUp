@@ -24,10 +24,10 @@ angular.module('pickUp.services', [])
       url: 'api/games',
       // data: gameReq
     })
-    .then(function (resp) {
-      console.log('POST response data: ', resp.data);
-      return resp.data;
-    });
+    // .then(function (resp) {
+    //   console.log('POST response data: ', resp.data);
+    //   return resp.data;
+    // });
   };
   return {
     getAllGames: getAllGames

@@ -68,10 +68,15 @@ export default {
 
     
   },
-  getAllGames: () => {
-    console.log('get all game')
-    db.getAllGames()
-    .then()
+  getAllGames: (req, res, next) => {
+    console.log('get all games fired')
+    db.getGames()
+    .then( (data) =>{
+      console.log("getGames", data);
+      res.send(data);
+      // return data;
+      return Promise.resolve(data);
+    })
     .catch(err => {
       console.error('error fetching all games ', err)
       res.status(500).send('error requesting game');

@@ -1,3 +1,14 @@
+<!-- find a sports field to play at -->
+<form ng-submit="findFields()">
+    <div class="row">
+        <div class="offset-by-three six columns" >
+          <label for="fieldSearch">Search for a sports field</label>
+          <input name="fieldSearch" class="u-full-width" id="fieldInput" ng-model="data.fieldSearch">
+        </input>
+        </div>
+      </div> <!-- end of row  -->
+</form>
+<!-- Submit a request for a game -->
 <form ng-submit="requestGame()" >
   <div class="row">
     <div class="offset-by-three six columns" >
@@ -22,7 +33,6 @@
   <div class="row">
       <div class="offset-by-three six columns">
         <label for="locationInput">Location</label>
-        <!-- <select class="u-full-width" id="locationInput" ng-model="locationInput" required> -->
             <input 
             type="text" 
             class="u-full-width"

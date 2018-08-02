@@ -16,8 +16,6 @@ angular.module('gameReqForm', ['pickUp.services'])
       gameReq.sport = $scope.sportInput;
       gameReq.location = $scope.locationInput;
 
-      console.log(gameReq);
-
       GameReq.requestGame(gameReq)
         .then(function (game) {
           sharedProps.set(game);
@@ -27,6 +25,9 @@ angular.module('gameReqForm', ['pickUp.services'])
           console.error('error requesting game ', error);
         });
     };
+    $scope.findField = function(){
+      console.log('finding fields');
+    }
     $scope.data = {
       model: null,
       availableOptions: timeSlots,

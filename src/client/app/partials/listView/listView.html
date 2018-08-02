@@ -1,10 +1,28 @@
-<div >
+<div class="container" >
     <h1>Game List</h1>
+    <!-- <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+        // The location of Uluru
+        var nola = {lat: 29.344, lng: -90.036};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: unolaluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: nola, map: map});
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGwwsJ_b1qsdRsVjFtqc3ex0Em_KA2nc&callback=initMap"
+        async defer></script> -->
     <pre>{{$scope.games}}</pre>
     <div class="games">
         <div class="game-table">
             <div class="game-row" games="games" ng-repeat="game in games track by game._id">
-                <div class="game-data">Sport: {{game.sport}} at {{game.startTime}} at {{game.location}} </div>
+                <ul class="game-data">
+                    <li>Sport: {{game.sport}} at {{game.startTime}} at {{game.location}}</li>
+                </ul>
             </div>
         </div>
     </div>

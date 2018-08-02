@@ -18,7 +18,7 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapVi
       .state('mapView', {
         url: '/mapView',
         templateUrl: 'app/partials/mapView/mapView.html',
-        controller: 'MapViewController'
+        controller: 'MapViewController',
       })
       .state('listView', {
         url: '/listView',

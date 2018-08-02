@@ -28,8 +28,8 @@ const helpers = {
   },
 
   forEachPlayer: (game, cb) => {
-    game.smsNums.forEach(smsObj => {
-      cb(smsObj.smsNum);
+    game.smsNums.forEach(num => {
+      cb(num);
     });
   },
 

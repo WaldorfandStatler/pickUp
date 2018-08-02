@@ -11,9 +11,28 @@
       <label for="sportInput">Sport</label>
       <select class="u-full-width" id="sportInput" ng-model="sportInput" required>
         <option value="soccer" >Soccer</option>
+        <option value="Basketball" >Basketball</option>
+        <option value="Ultimate Frisbee" >Ultimate Frisbee</option>
+        <option value="Medieval Jousting" >Medieval Jousting</option>
+        <option value="Football">Football</option>
+        <option value="Rugby">Rugby</option>
       </select>
     </div>
   </div> <!-- end of row  -->
+  <div class="row">
+      <div class="offset-by-three six columns">
+        <label for="locationInput">Location</label>
+        <!-- <select class="u-full-width" id="locationInput" ng-model="locationInput" required> -->
+            <input 
+            type="text" 
+            class="u-full-width"
+            placeholder="Enter you desired location here"
+            id="locationInput"
+            ng-model="locationInput"
+        required />
+      </div>
+    </div> <!-- end of row  -->
+  
   <div class="row">
     <div class="offset-by-three six columns">
       <label for="exampleMessage">Phone Number</label>

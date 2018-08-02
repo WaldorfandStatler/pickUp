@@ -13,13 +13,13 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapVi
         url: '/games',
         templateUrl: 'app/partials/games/games.html',
         controller: 'GamesController'
-      }) //;
-      //Thus begins the fun
-      // .state('mapView', {
-      //   url: '/mapView',
-      //   templateUrl: 'app/partials/mapView/mapView.html',
-      //   controller: 'MapViewController'
-      // })
+      }) 
+      // Thus begins the fun
+      .state('mapView', {
+        url: '/mapView',
+        templateUrl: 'app/partials/mapView/mapView.html',
+        controller: 'MapViewController'
+      })
       .state('listView', {
         url: '/listView',
         controller: 'ListViewController',

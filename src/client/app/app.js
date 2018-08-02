@@ -1,7 +1,7 @@
 angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
 
   .config(function ($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/index');
+    // $urlRouterProvider.otherwise('/index');
 
     $stateProvider
       .state('gameReq', {
@@ -13,11 +13,17 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
         url: '/games',
         templateUrl: 'app/partials/games/games.html',
         controller: 'GamesController'
+      }) //;
+      //Thus begins the fun
+      .state('mapView', {
+        url: '/mapView',
+        templateUrl: 'app/partials/mapView/mapView.html',
+        controller: 'MapViewController'
       })
       .state('listView', {
         url: '/listView',
-
-        // templateUrl: 'app/partials/listView/listView.html',
+        templateUrl: 'app/partials/listView/listView.html',
+        // component: 'listView',
         controller: 'ListViewController',
         // data : 'soccer',
         resolve: {
@@ -26,27 +32,8 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
             .then( (result)=>{
               console.log('result from app.js', result);
               return result;
-              
-            });
-            
-            console.log('games', games);
-            
-          }
-        } //;
+          });
+        }
+        },
       })
-      //Thus begins the fun
-      .state('mapView', {
-        url: '/mapView',
-        templateUrl: 'app/partials/mapView/mapView.html',
-        controller: 'MapViewController'
-      })
-      
-       
-        
-        
-      })
-      // app.controller('ListViewController', function($scope, games){
-      //   $scope.games = games;
-      // })
-
-  
+  });

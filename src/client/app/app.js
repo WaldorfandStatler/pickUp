@@ -24,17 +24,6 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapVi
         url: '/listView',
         controller: 'ListViewController',
         templateUrl: 'app/partials/listView/listView.html',
-        // component: 'listView',
-        // data : 'soccer',
-        // resolve: {
-        //   games: function (GetGames) {
-        //     return GetGames.getAllGames()
-        //     .then( (result)=>{
-        //       console.log('result from app.js', result);
-              
-        //       return result;
-        //     });
-        //   }
-        // },
+       
       })
   });

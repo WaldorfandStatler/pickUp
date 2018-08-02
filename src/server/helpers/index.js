@@ -14,7 +14,7 @@ const helpers = {
     return gameTime;
   },
   // using === instead of >= to avoid multiple texts 
-  // put texted flag on each player
+  // put texted flag on each player 
   hasEnoughPlayers: game => game.playRequests === game.minPlayers,
 
   includesPlayer: (game, smsNum) => {
@@ -28,8 +28,8 @@ const helpers = {
   },
 
   forEachPlayer: (game, cb) => {
-    game.smsNums.forEach(smsObj => {
-      cb(smsObj.smsNum);
+    game.smsNums.forEach(num => {
+      cb(num);
     });
   },
 

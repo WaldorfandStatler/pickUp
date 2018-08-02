@@ -30,28 +30,29 @@ export default {
             console.error('game already requested.');
             return Promise.resolve(foundGame);
           } else {
-            return db.addPlayer(foundGame, smsNum)
+              db.addPlayer(foundGame, smsNum)
+              .then(game => {//this should go inside if else chain for found game
+                // check if playRequest > minPlayer
+                console.log('player Count: ', game.playRequests);
+                if (helpers.hasEnoughPlayers(game)) {
+                  // send to all the players
+                  helpers.forEachPlayer(game, (num) => {
+                    console.log(game);
+                    console.log('texting ', num);
+                    sms.sendScheduledGame({
+                      smsNum: num,
+                      sport: gameReq.sport,
+                      gameLoc: 'Stallings',
+                      gameTime: gameReq.time
+                    });
+                  })
+                }
+                return Promise.resolve(game);
+              })  
           }
         } else {
           console.log('game not found. using newGame ');
           return Promise.resolve(newGame)
-            .then(game => {//this should go inside if else chain for found game
-              // check if playRequest > minPlayer
-              console.log('player Count: ', game.playRequests);
-              if (helpers.hasEnoughPlayers(game)) {
-                // send to all the players
-                helpers.forEachPlayer(game, (num) => {
-                  console.log('texting ', num);
-                  sms.sendScheduledGame({
-                    smsNum: num,
-                    sport: gameReq.sport,
-                    gameLoc: 'Stallings',
-                    gameTime: gameReq.time
-                  });
-                })
-              }
-              return Promise.resolve(game);
-            })  
             .then(db.saveGame);//save for new game
         }
       })
@@ -65,6 +66,7 @@ export default {
 
     
   },
+
   getAllGames: (req, res, next) => {
     console.log('get all games fired')
     db.getGames()

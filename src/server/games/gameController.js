@@ -8,7 +8,7 @@ export default {
   addRequest: (req, res, next) => {
     let gameReq = req.body;
     console.log(gameReq);
-    let smsNum = helpers.phone(gameReq.smsNum);//phone is a module the properly formats the number
+    let smsNum = helpers.phone(gameReq.smsNum);//phone is a module the properly formats the number for twillo, puts a 1 to the front of number
     if (!smsNum) {
       return res.send(400);
     }
@@ -26,20 +26,11 @@ export default {
       .then(foundGame => {
         if (foundGame) {
           console.log('game found ');
-          
-          if ( helpers.includesPlayer(foundGame, gameReq.smsNum) ) {
+          if (helpers.includesPlayer(foundGame, smsNum) === true) {
             console.error('game already requested.');
             return Promise.resolve(foundGame);
           } else {
-            
-            // foundGame.smsNums.push(gameReq.smsNum)
-            // foundGame.playRequests += 1
-            // foundGame.save((err) => {
-            //   if (err)  console.error(err);
-            //   return;
-            // });
-            return db.addPlayer(foundGame, gameReq.smsNum)
-            // return Promise.resolve(foundGame)
+            return db.addPlayer(foundGame, smsNum)
           }
         } else {
           console.log('game not found. using newGame ');

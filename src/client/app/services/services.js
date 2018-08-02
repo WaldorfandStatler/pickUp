@@ -26,7 +26,7 @@ angular.module('pickUp.services', [])
     })
     .then( (response) => {
       console.log(response.data);
-      let data = response.data;
+      let data = response.data
       return data;
     })
     .catch((err)=> { console.log("Get games factory is broken", err)})

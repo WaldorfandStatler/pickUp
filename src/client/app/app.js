@@ -1,7 +1,7 @@
-angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
+angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapView' ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
-    // $urlRouterProvider.otherwise('/index');
+    $urlRouterProvider.otherwise('/index');
 
     $stateProvider
       .state('gameReq', {
@@ -15,25 +15,26 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
         controller: 'GamesController'
       }) //;
       //Thus begins the fun
-      .state('mapView', {
-        url: '/mapView',
-        templateUrl: 'app/partials/mapView/mapView.html',
-        controller: 'MapViewController'
-      })
+      // .state('mapView', {
+      //   url: '/mapView',
+      //   templateUrl: 'app/partials/mapView/mapView.html',
+      //   controller: 'MapViewController'
+      // })
       .state('listView', {
         url: '/listView',
+        controller: 'ListViewController',
         templateUrl: 'app/partials/listView/listView.html',
         // component: 'listView',
-        controller: 'ListViewController',
         // data : 'soccer',
-        resolve: {
-          games: function (GetGames) {
-            GetGames.getAllGames()
-            .then( (result)=>{
-              console.log('result from app.js', result);
-              return result;
-          });
-        }
-        },
+        // resolve: {
+        //   games: function (GetGames) {
+        //     return GetGames.getAllGames()
+        //     .then( (result)=>{
+        //       console.log('result from app.js', result);
+              
+        //       return result;
+        //     });
+        //   }
+        // },
       })
   });

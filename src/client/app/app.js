@@ -27,9 +27,11 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games'])
         // data : 'soccer',
         resolve: {
           games: function (GetGames) {
-          return GetGames.getAllGames();;
+          console.log(GetGames.getAllGames());
+          return GetGames.getAllGames();
           }
         }
+        
       })
 
   });

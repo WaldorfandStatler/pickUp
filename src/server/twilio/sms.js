@@ -23,11 +23,6 @@ const sms = {
         }
       });
     });
-
-    //test
-    // return new Promise((resolve, reject) => {
-    //   resolve('message sent!');
-    // });
   },
 
 

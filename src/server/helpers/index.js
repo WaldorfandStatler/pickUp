@@ -17,9 +17,15 @@ const helpers = {
   // put texted flag on each player
   hasEnoughPlayers: game => game.playRequests === game.minPlayers,
 
-  includesPlayer: (game, smsNum) => game.smsNums.reduce((included, smsObj) => {
-    return smsObj.smsNum === smsNum || included;
-  }, false),
+  includesPlayer: (game, smsNum) => {
+    for (let i = 0; i < game.smsNums.length; i++) {
+      if (game.smsNums[i] == smsNum) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
 
   forEachPlayer: (game, cb) => {
     game.smsNums.forEach(smsObj => {

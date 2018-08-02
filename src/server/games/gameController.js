@@ -26,8 +26,7 @@ export default {
       .then(foundGame => {
         if (foundGame) {
           console.log('game found ');
-          
-          if ( helpers.includesPlayer(foundGame, gameReq.smsNum) ) {
+          if (helpers.includesPlayer(foundGame, smsNum) === true) {
             console.error('game already requested.');
             return Promise.resolve(foundGame);
           } else {

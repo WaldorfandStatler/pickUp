@@ -1,16 +1,12 @@
 
-  
   angular.module('listView', ['pickUp.services'])
-  .controller('ListViewController', function($scope,  GetGames, sharedProps) {
-    console.log('list view controller');
-      console.log(data);
-      $scope.games = games;
+  .controller('ListViewController', function( $scope, GetGames) {
+     
+      GetGames.getAllGames()
+      .then( (result)=>{
+        console.log('result from app.js', result);
+        $scope.games = result;
+        return result;
+      });
       console.log($scope);
-    //   $scope.games = GetGames.getAllGames();
-    //   {
-    //     GetGames.getAllGames()
-    //     .then
-    //   };
-
-    
     });

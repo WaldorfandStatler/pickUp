@@ -7,7 +7,7 @@ const gameSchema = mongoose.Schema({
   location: 'string',
   minPlayers: 'Number',
   playRequests: 'Number',
-  smsNums: [userSchema]
+  smsNums: [Number]
 });
 
 const Game = mongoose.model('Game', gameSchema);

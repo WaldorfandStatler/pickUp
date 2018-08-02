@@ -14,8 +14,8 @@ const helpers = {
     return gameTime;
   },
   // using === instead of >= to avoid multiple texts 
-  // put texted flag on each player
-  hasEnoughPlayers: game => game.playRequests === game.minPlayers,
+  // put texted flag on each player //added +1 for condition to hit condition when there are enough players, count not showing update when this is called
+  hasEnoughPlayers: game => game.playRequests + 1 === game.minPlayers,
 
   includesPlayer: (game, smsNum) => {
     for (let i = 0; i < game.smsNums.length; i++) {

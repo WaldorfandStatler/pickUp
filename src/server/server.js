@@ -16,7 +16,12 @@ app.use(bodyParser.json());
 
 app.use(express.static(clientDir));
 
-app.post('/api/games', gameController.addRequest)
+app.post('/api/games', gameController.addRequest);
+
+//Added route to receive all games from the database
+//getAllGames is not written yet
+app.get('/api/games', gameController.getAllGames);
+
 console.log(`client directory: ${clientDir}`)
 
 export default app;

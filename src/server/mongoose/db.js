@@ -22,18 +22,16 @@ const db = {
     });
   },
 
-  addPlayer: (game, user) => {
+  addPlayer: (game, num) => {
 // make a promise the adds a new phone# a games smsNums array
- console.log(game, user);
- return game;
-  //   return new Promise((resolve, reject) => {
-  //     game.(    (err, game) => {
-  //       if (err) return reject(err);
-  //       resolve(game);
-  //     });
-  //   });
+ console.log(game.id);
+    return new Promise((resolve, reject) => {
+      Game.findOneAndUpdate({ _id: game.id }, { $push: { smsNums: num }, $inc: { playRequests: 1 } }, (err, game) => {
+        if (err) return reject(err);
+        resolve(game);
+      });
+    });
   },
-
 };
 
 

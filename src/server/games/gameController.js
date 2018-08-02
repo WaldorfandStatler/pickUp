@@ -19,7 +19,7 @@ export default {
       location: 'Stallings',
       minPlayers: 2,//change to 2 to stay within economic restrictions
       playRequests: 1,
-      smsNums: [{smsNum: smsNum}],
+      smsNums: [smsNum],
     });
     // check if game exists in DB
     db.getGame(newGame)
@@ -32,16 +32,14 @@ export default {
             return Promise.resolve(foundGame);
           } else {
             
-            // foundGame.smsNums.push({smsNum: gameReq.smsNum})
+            // foundGame.smsNums.push(gameReq.smsNum)
             // foundGame.playRequests += 1
             // foundGame.save((err) => {
             //   if (err)  console.error(err);
             //   return;
             // });
             return db.addPlayer(foundGame, gameReq.smsNum)
-            // return Game.findByIdAndUpdate(foundGame.id, { $push: { smsNum: gameReq.smsNum } } )
-            // return Promise.resolve(updateGame)
-              // .then(db.addPlayer); 
+            // return Promise.resolve(foundGame)
           }
         } else {
           console.log('game not found. using newGame ');

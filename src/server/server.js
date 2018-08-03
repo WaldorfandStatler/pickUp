@@ -26,7 +26,12 @@ app.post('/api/games', gameController.addRequest);
 //getAllGames is not written yet
 app.get('/api/games', gameController.getAllGames);
 
-app.post('/api/sms', group.handleSms);
+app.post('/sms', group.handleSms);
+// app.post('/sms', (req, res) => {
+//   console.log('sms');
+//   res.send('wow');
+  
+// })
 
 console.log(`client directory: ${clientDir}`)
 

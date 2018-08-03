@@ -30,9 +30,9 @@ const sms = {
   sendSmsFromUser: (to, body) => {
     return new Promise((resolve, reject) => {
       client.messages.create({
-        to,
+        to: to,
         messagingServiceSid: TWILIO_MSG_SID,
-        body,
+        body: body,
       }, (err, resp) => {
         if (err) {
           console.error('Error sending SMS: ', err);

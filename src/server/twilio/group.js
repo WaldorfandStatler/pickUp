@@ -13,21 +13,21 @@ const group = {
     db.getGameByNum(from)
       .then(game => game.smsNums.filter(num => num !== from))
       .then(nums => {
-        console.log(nums);
+        console.log(nums,'nums');
         nums.forEach(num => {
           sms.sendSmsFromUser(num, body);
         })
-        return;
+        return Promise.resolve(nums);
       })
       .then(() => {
         var twiml = new twilio.TwimlResponse();
         twiml.message(function () {
-          this.body(req.body.Body);
+          this.body(message);
         });
         res.writeHead(200, { 'Content-Type': 'text/xml' });
         res.end(twiml.toString());
       })
-      .catch(err => console.err(err));    
+      .catch(err => console.error(err));    
   }
 };
 

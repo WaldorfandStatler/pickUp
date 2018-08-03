@@ -1,4 +1,4 @@
-angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapView' ])
+angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapView', 'searchField' ])
 
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/index');
@@ -18,7 +18,7 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapVi
       .state('mapView', {
         url: '/mapView',
         templateUrl: 'app/partials/mapView/mapView.html',
-        controller: 'MapViewController'
+        controller: 'MapViewController',
       })
       .state('listView', {
         url: '/listView',
@@ -26,4 +26,9 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapVi
         templateUrl: 'app/partials/listView/listView.html',
        
       })
-  });
+      .state('searchField', {
+        url: '/searchField',
+        controller: 'searchFieldController',
+        templateUrl: 'app/partials/searchField/searchField.html', 
+      })
+  })

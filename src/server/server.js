@@ -28,11 +28,6 @@ app.get('/api/games', gameController.getAllGames);
 app.get('api/search', gameController.findField );
 
 app.post('/sms', group.handleSms);
-// app.post('/sms', (req, res) => {
-//   console.log('sms');
-//   res.send('wow');
-  
-// })
 
 console.log(`client directory: ${clientDir}`)
 

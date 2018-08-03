@@ -42,7 +42,7 @@ export default {
                     sms.sendScheduledGame({
                       smsNum: num,
                       sport: gameReq.sport,
-                      gameLoc: 'Stallings',
+                      gameLoc: gameReq.location,
                       gameTime: gameReq.time
                     });
                   })

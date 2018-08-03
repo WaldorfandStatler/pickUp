@@ -3,6 +3,11 @@
   .controller('ListViewController', function( $scope, GetGames, GameReq) {
     console.log('listView games'  , $scope)
  
+    // console.log($scope);
+    // $scope.requestGame ;
+    // requestGame = $scope.requestGame;
+    // console.log(requestGame);
+    
     GetGames.getAllGames()
       .then( (result)=>{
         console.log('get all games from listview ', result);
@@ -10,11 +15,11 @@
         return result;
     });
 
-      console.log($scope);
+      console.log($scope.games);
     
 
     let gameReq = {};
-    
+
     $scope.requestGame = function() {
       console.log($scope.game);
       console.log('requesting Game', $scope);

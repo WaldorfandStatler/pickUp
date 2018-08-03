@@ -65,3 +65,4 @@ angular.module('pickUp.services', [])
     findFields: findFields
   };
 })
+

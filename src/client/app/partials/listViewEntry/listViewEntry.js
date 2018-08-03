@@ -3,34 +3,40 @@ angular.module('listView')
   
   bindings: {
     game: '<'
+    // requestGame: this.requestGame 
   },
-  controller: function(){
-    console.log(this.game.sport);
+ 
+  controller: function(GameReq){
+    // console.log(requestGame);
+    console.log('listviewentry',this);
+    console.log(this.game);
     game = this.game;
+    
     console.log(game);
-    this.clickHandler = function(game) {
-      requestGame(game);
-    }
+    // this.clickHandler = function(game) {
+    //   requestGame(game);
+    // }
+    let gameReq = {};
+    this.requestGame = function() {
+    // console.log($scope.game);
+    console.log('requesting Game', this.game);
+    // console.log( "this here game", this);
+    gameReq.smsNum = this.game.smsNum;
+    gameReq.time = this.game.startTime;
+    gameReq.sport = this.game.sport;
+    gameReq.location = this.game.location;
 
-      requestGame = function() {
-      // console.log($scope.game);
-      console.log('requesting Game', this.game);
-      console.log( "this here game", this);
-      gameReq.smsNum = this.game.smsNum;
-      gameReq.time = this.game.startTime;
-      gameReq.sport = game.sport;
-      gameReq.location = $scope.game.location;
-
-      GameReq.requestGame(gameReq)
-        .then(function (game) {
-          sharedProps.set(game);
-          $location.path('/games');
-        })
-        .catch(function (error) {
-          console.error('error requesting game ', error);
-        });
-        
-    };
+    // console.log(requestGame);
+    GameReq.requestGame(gameReq)
+      .then(function (game) {
+        sharedProps.set(game);
+        $location.path('/games');
+      })
+      .catch(function (error) {
+        console.error('error requesting game ', error);
+      });
+      
+  };
     
   },
   templateUrl: 'app/partials/listViewEntry/listViewEntry.html'

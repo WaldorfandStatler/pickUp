@@ -31,4 +31,4 @@ angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapVi
         controller: 'searchFieldController',
         templateUrl: 'app/partials/searchField/searchField.html', 
       })
-  });
+  })

@@ -1,23 +1,13 @@
-
-  angular.module('listView', ['pickUp.services'])
-  .controller('ListViewController', function( $scope, GetGames, GameReq) {
-     
-
-    GetGames.getAllGames()
-      .then( (result)=>{
-        console.log('result from app.js', result);
-        $scope.games = result;
-        return result;
-    });
-      console.log($scope);
-    
+angular.module('listViewEntry', ['pickUp.services'])
+  .controller('ListViewEntryController', function( $scope, GetGames, GameReq) {
+     console.log($scope);
 
     let gameReq = {}
     $scope.requestGame = function() {
       console.log('requesting Game', $scope);
-      console.log( "this here game", this.game);
+      console.log(this.game);
       gameReq.smsNum = $scope.smsNum;
-      gameReq.time = this.game.startTime;
+      // gameReq.time = game.startTime;
       // gameReq.sport = game.sport;
       // gameReq.location = $scope.game.location;
 

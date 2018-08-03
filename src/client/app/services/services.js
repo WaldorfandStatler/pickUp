@@ -8,7 +8,7 @@ angular.module('pickUp.services', [])
       data: gameReq
     })
     .then(function (resp) {
-      console.log('POST response data: ', resp.data);
+      // console.log('POST response data: ', resp.data);
       return resp.data;
     });
   };
@@ -18,14 +18,14 @@ angular.module('pickUp.services', [])
 })
 .factory('GetGames', function($http) {
   var getAllGames = function() {
-    console.log('.factory getGames - getAllGames')
+    // console.log('.factory getGames - getAllGames')
     return $http({
       method: 'GET',
       url: 'api/games',
       // data: gameReq
     })
     .then( (response) => {
-      console.log(response.data);
+      // console.log(response.data);
       let data = response.data
       return data;
     })

@@ -1,0 +1,13 @@
+<div class="game-data">
+    <div>Sport: {{game.sport}} at {{game.startTime}} at {{game.location}}
+        <div class="input-group input-group-sm mb-3">
+            <div class="input-group-prepend"> 
+              <button ng-click="$scope.onClick($scope.game)"type="submit" value="submit" class="input-group-text" id="inputGroup-sizing-sm">Join Game</button>
+            </div>
+            {{game}}
+            <input type="text" id="smsNum" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Enter # and click to join game"
+            ng-model="data.smsNum" >
+            <!-- <input ng-model="searchText" ng-init="searchText ='can you see me'"></input> -->
+        </div>
+    </div>
+</div>

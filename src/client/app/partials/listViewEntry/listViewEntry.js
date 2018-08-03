@@ -6,27 +6,22 @@ angular.module('listView')
     // requestGame: this.requestGame 
   },
  
-  controller: function(GameReq){
-    // console.log(requestGame);
-    console.log('listviewentry',this);
-    console.log(this.game);
-    game = this.game;
-    
-    console.log(game);
-    // this.clickHandler = function(game) {
-    //   requestGame(game);
-    // }
+  controller: function(GameReq, sharedProps){
+    // console.log('listviewentry', game);
+   
+    // game = this.game;
+  
     let gameReq = {};
-    this.requestGame = function() {
+    this.requestGame = function(smsNum) {
     // console.log($scope.game);
     console.log('requesting Game', this.game);
     // console.log( "this here game", this);
-    gameReq.smsNum = this.game.smsNum;
+    gameReq.smsNum = this.smsNum;
     gameReq.time = this.game.startTime;
     gameReq.sport = this.game.sport;
     gameReq.location = this.game.location;
 
-    // console.log(requestGame);
+    console.log("gameReq", gameReq);
     GameReq.requestGame(gameReq)
       .then(function (game) {
         sharedProps.set(game);

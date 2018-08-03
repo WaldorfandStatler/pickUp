@@ -2,11 +2,6 @@
   angular.module('listView', ['pickUp.services'])
   .controller('ListViewController', function( $scope, GetGames, GameReq) {
     console.log('listView games'  , $scope)
- 
-    // console.log($scope);
-    // $scope.requestGame ;
-    // requestGame = $scope.requestGame;
-    // console.log(requestGame);
     
     GetGames.getAllGames()
       .then( (result)=>{
@@ -14,12 +9,7 @@
         $scope.games = result;
         return result;
     });
-
-      console.log($scope.games);
-    
-
     let gameReq = {};
-
     $scope.requestGame = function() {
       console.log($scope.game);
       console.log('requesting Game', $scope);
@@ -37,14 +27,11 @@
         .catch(function (error) {
           console.error('error requesting game ', error);
         });
-        
     };
     joinGame = (game)=> {
       console.log(game);
     }
     $scope.data = {
       model: null,
-      // availableOptions: timeSlots,
-      // selectedOption: timeSlots[0]
     }
   });

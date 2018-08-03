@@ -1,3 +1,11 @@
+var timeSlots = _.range(0, 24).map(function (hour) {
+  return {
+    id: hour.toString(),
+    hour: hour,
+    name: moment(hour, 'hh').format('h:mma')
+  };
+});
+
 angular.module('listView')
 .component('listViewEntry', {
   
@@ -17,7 +25,7 @@ angular.module('listView')
     console.log('requesting Game', this.game);
     // console.log( "this here game", this);
     gameReq.smsNum = this.smsNum;
-    gameReq.time = this.game.startTime;
+    gameReq.time = helpers.createGameTime(this.game.startTime);
     gameReq.sport = this.game.sport;
     gameReq.location = this.game.location;
 

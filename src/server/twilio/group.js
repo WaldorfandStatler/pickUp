@@ -11,25 +11,23 @@ const group = {
     console.log(body, from);
     
     db.getGameByNum(from)
-      .then(game => {
-        console.log(game, 'then getbynumber');
-        
+      .then(game => game.smsNums.filter(num => num !== from))
+      .then(nums => {
+        console.log(nums);
+        nums.forEach(num => {
+          sms.sendSmsFromUser(num, body);
+        })
+        return;
       })
-      .catch(err => console.err(err));
-
-  
-
-
-    // sms.sendGroupSms(to, body)
-
-  
-    
-    var twiml = new twilio.TwimlResponse();
-    twiml.message(function () {
-      this.body(req.body.Body);
-    });
-    res.writeHead(200, { 'Content-Type': 'text/xml' });
-    res.end(twiml.toString());
+      .then(() => {
+        var twiml = new twilio.TwimlResponse();
+        twiml.message(function () {
+          this.body(req.body.Body);
+        });
+        res.writeHead(200, { 'Content-Type': 'text/xml' });
+        res.end(twiml.toString());
+      })
+      .catch(err => console.err(err));    
   }
 };
 

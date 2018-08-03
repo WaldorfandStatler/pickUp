@@ -27,7 +27,7 @@ const sms = {
     });
   },
   
-  sendGroupSms: (to, body) => {
+  sendSmsFromUser: (to, body) => {
     return new Promise((resolve, reject) => {
       client.messages.create({
         to,

@@ -1,38 +1,29 @@
 <div class="container" >
     <h1>Game List</h1>
-    <!-- <h3>My Google Maps Demo</h3>
-    <div id="map"></div>
-    <script>
-        // Initialize and add the map
-        function initMap() {
-        // The location of Uluru
-        var nola = {lat: 29.344, lng: -90.036};
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: unolaluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: nola, map: map});
-        }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpGwwsJ_b1qsdRsVjFtqc3ex0Em_KA2nc&callback=initMap"
-        async defer></script> -->
+    
     <form class="row" ng-submit="requestGame()">
         <div class="games">
             <div class="game-table">
+               <!-- {{games}} -->
+                <!-- <list-View-Entry
+                        games="$scope.games"
+                        ng-repeat="game in games track by game._id" 
+                        ng-click="$scope.onClick(game)"> {{games}}
+                </list-View-Entry> -->
                 <div class="game-row" games="games" ng-repeat="game in games track by game._id">
-                    <div class="game-data">
-                        <!-- <div>Sport: {{game.sport}} at {{game.startTime}} at {{game.location}}
+                    <ng-form name="game-data">
+                        <div>Sport: {{game.sport}} at {{game.startTime}} at {{game.location}}
                             <div class="input-group input-group-sm mb-3">
                                 <div class="input-group-prepend">
-                                  <button type="submit" value="submit" class="input-group-text" id="inputGroup-sizing-sm">Join Game</buttonn>
+                                  <!-- <button type="submit" value="submit" class="input-group-text" id="inputGroup-sizing-sm">Join Game</buttonn> -->
                                 </div>
-                                {{game}}
-                                <input type="text" id="smsNum" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Enter # and click to join game"
-                                ng-model="data.smsNum">
-                            </div>
-                        </div> -->
-                    </div>
-                </div>
+                                
+                                <!-- <input type="text" id="smsNum" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Enter # and click to join game"
+                                ng-model="data.smsNum"> -->
+                                </div>
+                        </div>
+                    </ng-form>
+                </div> 
             </div>
         </div>
     </form>

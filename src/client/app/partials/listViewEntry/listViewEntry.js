@@ -10,6 +10,7 @@ angular.module('listView')
  
   controller: function(GameReq, sharedProps, $location){
   console.log('game starttime', this.game.startTime);
+  // console.log(helpers.formater(this.game.startTime));  
  this.time = helpers.createGameTime(this.game.startTime).toString().slice(0,21);
 
    this.game.time = helpers.createGameTime(this.game.startTime);

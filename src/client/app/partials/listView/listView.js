@@ -17,7 +17,7 @@
       console.log($scope);
     
 
-    let gameReq = {}
+    let gameReq = {};
     $scope.requestGame = function() {
       console.log($scope.game);
       console.log('requesting Game', $scope);

@@ -1,4 +1,4 @@
-var timeSlots = _.range(17, 23).map(function (hour) {
+var timeSlots = _.range(0, 24).map(function (hour) {
   return {
     id: hour.toString(),
     hour: hour,

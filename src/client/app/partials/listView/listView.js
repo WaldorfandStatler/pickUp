@@ -4,6 +4,7 @@
     console.log('listView games'  , $scope)
      
 //
+
     GetGames.getAllGames()
       .then( (result)=>{
         console.log('get all games from listview ', result);

@@ -1,7 +1,8 @@
 <div class="row">
   <div class="offset-by-three six columns">
     <h4 ng-init="getGameTime()" ng-model="game" >
-      Pick-up game requested for {{ $scope.game.gameTime }}
+      Activity requested!!! 
+      <!-- {{ $scope.game.gameTime }} -->
     </h4>
     <div ng-hide="enoughPlayers">
       <p ng-hide="pluralPlayers">
@@ -9,8 +10,8 @@
       </p>
 
       <p ng-show="pluralPlayers">There are currently {{ game.playRequests - 1 }} other players wanting to play {{ game.sport }}.
-      <p>We'll text you in a few when we have at least {{ game.minPlayers }} players.</p>
-      <p>Lace 'em up!</p>
+      <p>We'll text you in a few when we have the minimum number of players.</p>
+      <p>Get Ready!</p>
     </div>
     <div ng-show="enoughPlayers">
       <h3>Congrats!! We have enough for a game! You should be getting a text soon confirming the details. Let's go!</h3>      

@@ -1,15 +1,26 @@
-<div class="container" >
-    <h1>Game List</h1>
-    <form class="row" >
-        <div class="games">
-            <div class="game-table">
-                <list-view-entry
-                        game="game"
-                        ng-model="game"
-                        ng-repeat="game in games track by game._id" 
-                        > 
-                </list-view-entry>
+<div class="col-md-12" align="middle">
+        <h1>Game List</h1>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <form class="row" >
+            <div class="games">
+                <div class="game-table">
+                    <div class="col-md-12" align="middle">
+                            <list-view-entry
+                            game="game"
+                            ng-model="game"
+                            ng-repeat="game in games track by game._id" 
+                            > 
+                    </list-view-entry>
+                    </div>
+                   
+                </div>
             </div>
-        </div>
-    </form>
-    </div>
+        </form>
+
+</div>
+              
+              

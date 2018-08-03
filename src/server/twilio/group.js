@@ -1,19 +1,28 @@
 import twilio from 'twilio';
-
-
+import db from '../mongoose/db'
+import sms from './sms'
 
 const group = {
   handleSms: (req, res) => {
     console.log(req.body);
-    var smsCount = req.session.counter || 0;
+    const message = 'Your message is being sent to the group'
+    const body = req.body.Body;
+    const from = Number(req.body.From.slice(1));
+    console.log(body, from);
+    
+    db.getGameByNum(from)
+      .then(game => {
+        console.log(game, 'then getbynumber');
+        
+      })
+      .catch(err => console.err(err));
 
-    var message = 'Hello, thanks for the new message.';
-    if (smsCount > 0) {
-      message = 'Hello, thanks for message number ' + (smsCount + 1);
-    }
+  
 
-    req.session.counter = smsCount + 1;
-    console.log(req.session);
+
+    // sms.sendGroupSms(to, body)
+
+  
     
     var twiml = new twilio.TwimlResponse();
     twiml.message(function () {

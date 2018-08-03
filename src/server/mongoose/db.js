@@ -49,7 +49,18 @@ const db = {
         resolve(game);
       });
     });
-  }
+  }, 
+
+  getGameByNum: (from) => {
+    return new Promise((resolve, reject) => {
+      Game.findOne({
+        smsNums: from,
+      }, (err, game) => {
+        if (err) return reject(err);
+        resolve(game);
+      });
+    });
+  },
 };
 
 

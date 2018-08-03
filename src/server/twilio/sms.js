@@ -26,7 +26,25 @@ const sms = {
       });
     });
   },
+  
+  sendGroupSms: (to, body) => {
+    return new Promise((resolve, reject) => {
+      client.messages.create({
+        to,
+        messagingServiceSid: TWILIO_MSG_SID,
+        body,
+      }, (err, resp) => {
+        if (err) {
+          console.error('Error sending SMS: ', err);
+          reject(err);
+        } else {
+          console.log(resp);
+          resolve(resp);
+        }
+      });
+    });
 
+  }
 
 };
 

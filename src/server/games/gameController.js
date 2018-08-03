@@ -36,12 +36,10 @@ export default {
                 console.log('player Count: ', game.playRequests);
                 if (helpers.hasEnoughPlayers(game)) {
                   // send to all the players
-                  req.session.game = game.id;
                   helpers.forEachPlayer(game, (num) => {
                     console.log(game);
                     console.log('texting ', num);
                     sms.sendScheduledGame({
-                      session: req.session,
                       smsNum: num,
                       sport: gameReq.sport,
                       gameLoc: gameReq.location,

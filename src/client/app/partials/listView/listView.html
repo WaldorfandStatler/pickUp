@@ -1,37 +1,26 @@
-<div class="container" >
-    <h1>Game List</h1>
-    
-    <form class="row" ng-submit="requestGame()">
-        <div class="games">
-            <div class="game-table">
-               <!-- {{games}} -->
-                <list-view-entry
-                        game="game"
-                        ng-model="game"
-                        ng-repeat="game in games track by game._id" 
-                        ng-click="$scope.onClick(game)"> 
-                </list-view-entry>
+<div class="col-md-12" align="middle">
+        <h1>Game List</h1>
+        <br>
+        <br>
+        <br>
+        <br>
 
-
-
-                <!-- <div class="game-row" games="games" ng-repeat="game in games track by game._id">
-                    <ng-form name="game-data">
-                        <div  ng-model="game" ><h3>Join in for {{game.sport}} at {{game.startTime}} at {{game.location}}. {{game.playRequests}} out of the {{game.minPlayers}} players required </h3>
-                           {[]}
-                        
-                            <div class="input-group input-group-sm mb-3">
-                                <div class="input-group-prepend">
-                                  <button type="submit" value="submit" class="input-group-text" id="inputGroup-sizing-sm">Join Game</buttonn>
-                                </div>
-                                
-                                <input type="text" id="smsNum" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Enter # and click to join game"
-                                ng-model="data.smsNum">
-                                </div>
-                        </div>
-                    </ng-form>
-                </div>  -->
+        <form class="row" >
+            <div class="games">
+                <div class="game-table">
+                    <div class="col-md-12" align="middle">
+                            <list-view-entry
+                            game="game"
+                            ng-model="game"
+                            ng-repeat="game in games track by game._id" 
+                            > 
+                    </list-view-entry>
+                    </div>
+                   
+                </div>
             </div>
-        </div>
-    </form>
-    </div>
-    <!--  -->
+        </form>
+
+</div>
+              
+              

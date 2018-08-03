@@ -5,12 +5,19 @@ import twilio from 'twilio';
 const group = {
   handleSms: (req, res) => {
     console.log(req.body);
+    var smsCount = req.session.counter || 0;
+
+    var message = 'Hello, thanks for the new message.';
+    if (smsCount > 0) {
+      message = 'Hello, thanks for message number ' + (smsCount + 1);
+    }
+
+    req.session.counter = smsCount + 1;
+    console.log(req.session);
     
-    var twilio = require('twilio');
     var twiml = new twilio.TwimlResponse();
     twiml.message(function () {
-      this.body('The Robots are coming! Head for the hills!');
-      this.media('https://farm8.staticflickr.com/7090/6941316406_80b4d6d50e_z_d.jpg');
+      this.body(req.body.Body);
     });
     res.writeHead(200, { 'Content-Type': 'text/xml' });
     res.end(twiml.toString());

@@ -1,4 +1,5 @@
 import twilio from 'twilio';
+
 import moment from 'moment';
 import { TWILIO_MSG_SID, TWILIO_AUTH_TOKEN, TWILIO_SID } from '../../../config';
 
@@ -8,6 +9,7 @@ const sms = {
     let message = `${sport} is happening @ ${gameLoc} for ${moment(gameTime).format('llll')}. You in?`;
     console.log('sending message: ', message);
     // real text
+    
     return new Promise((resolve, reject) => {
       client.messages.create({
         to: smsNum,

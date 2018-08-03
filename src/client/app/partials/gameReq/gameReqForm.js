@@ -5,7 +5,7 @@ var timeSlots = _.range(0, 24).map(function (hour) {
     name: moment(hour, 'hh').format('h:mma')
   };
 });
-
+//change
 angular.module('gameReqForm', ['pickUp.services'])
 .controller('TimeSelectController', function($scope, $location, GameReq, sharedProps) {
     var gameReq = {};

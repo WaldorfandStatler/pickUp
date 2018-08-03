@@ -40,6 +40,8 @@ export default {
                     console.log(game);
                     console.log('texting ', num);
                     sms.sendScheduledGame({
+                      session: req.session,
+                      id: gameReq.id,
                       smsNum: num,
                       sport: gameReq.sport,
                       gameLoc: gameReq.location,

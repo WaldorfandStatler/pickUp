@@ -6,7 +6,7 @@ angular.module('listView')
     // requestGame: this.requestGame 
   },
  
-  controller: function(GameReq, sharedProps){
+  controller: function(GameReq, sharedProps, $location){
     // console.log('listviewentry', game);
    
     // game = this.game;

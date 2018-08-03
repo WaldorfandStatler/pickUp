@@ -8,14 +8,13 @@ var timeSlots = _.range(0, 24).map(function (hour) {
 //change
 angular.module('gameReqForm', ['pickUp.services'])
 .controller('TimeSelectController', function($scope, $location, GameReq, sharedProps) {
-    var gameReq = {};
+  var gameReq = {};
     $scope.requestGame = function() {
       console.log('requesting Game');
       gameReq.time = helpers.createGameTime($scope.data.selectedOption.hour);
       gameReq.smsNum = $scope.smsNum;
       gameReq.sport = $scope.sportInput;
       gameReq.location = $scope.locationInput;
-
       GameReq.requestGame(gameReq)
         .then(function (game) {
           sharedProps.set(game);

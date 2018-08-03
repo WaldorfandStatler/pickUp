@@ -1,6 +1,6 @@
 
   angular.module('listView', ['pickUp.services'])
-  .controller('ListViewController', function( $scope, GetGames, GameReq) {
+  .controller('ListViewController', function( $scope, GetGames, GameReq, $window) {
     console.log('listView games'  , $scope)
      
 

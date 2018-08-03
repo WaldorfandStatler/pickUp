@@ -1,8 +1,8 @@
-angular.module('listViewEntry', ['pickUp.services'])
-  .controller('ListViewEntryController', function( $scope, GetGames, GameReq) {
-     
-    $scope.game = games;
-    console.log($scope, "from entry view");
+angular.module('pickUp')
+.controller('ListViewEntryController', function( $scope, GetGames, GameReq) {
+  
+  $scope.game = games;
+  console.log($scope, "from entry view");
     console.log("scope from listviewentry", $scope.games);
     
 
@@ -14,7 +14,7 @@ angular.module('listViewEntry', ['pickUp.services'])
       // gameReq.time = game.startTime;
       // gameReq.sport = game.sport;
       // gameReq.location = $scope.game.location;
-
+      
       // GameReq.requestGame(gameReq)
       //   .then(function (game) {
       //     sharedProps.set(game);
@@ -31,14 +31,20 @@ angular.module('listViewEntry', ['pickUp.services'])
       // availableOptions: timeSlots,
       // selectedOption: timeSlots[0]
     }
-
+    
   });
-  angular.module('pickUp')
-  .component('videoListEntry', {
-    bindings: {
-      games: '<'
-    },
-    templateUrl: 'src/templates/videoListEntry.html'
-  });
-
-
+  
+  
+  
+  // .component('listViewEntry', {
+  //   bindings: {
+  //     games: '<'
+  //   },
+  //   controller: function(){
+  //     this.clickHandler = function() {
+  //       alert('sup');
+  //     }
+  //   },
+  //   template: 'listEntryView.html'
+  
+  // })

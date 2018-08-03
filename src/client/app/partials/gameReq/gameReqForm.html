@@ -10,56 +10,7 @@
       </div>
 </form> -->
 <!-- Submit a request for a game -->
-<head><script>
-  // This example requires the Places library. Include the libraries=places
-  // parameter when you first load the API. For example:
-  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-  var map;
-  var infowindow;
-
-  function initMap() {
-    var pyrmont = { lat: 29.968021, lng: -90.05899099999999 };
-
-    map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
-    });
-
-    var request = {
-      location: pyrmont,
-      radius: '500',
-      query: 'sports field'
-    };
-
-    service = new google.maps.places.PlacesService(map);
-    service.textSearch(request, callback);
-  }
-
-  function callback(results, status) {
-    if (status == google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        var place = results[i];
-        createMarker(results[i]);
-      }
-    }
-  }
-
-  function createMarker(place) {
-    var placeLoc = place.geometry.location;
-    var marker = new google.maps.Marker({
-      map: map,
-      position: place.geometry.location,
-      title: place.name,
-      icon: place.image,
-    });
-
-    google.maps.event.addListener(marker, 'click', function () {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
-  }
-</script></head>
 <form ng-submit="requestGame()" >
   <div class="row">
     <div class="offset-by-three six columns" >

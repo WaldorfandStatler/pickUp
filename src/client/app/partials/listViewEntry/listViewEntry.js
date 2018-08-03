@@ -1,13 +1,36 @@
 angular.module('listView')
 .component('listViewEntry', {
-
+  
   bindings: {
     game: '<'
   },
   controller: function(){
-    this.clickHandler = function() {
-      alert('sup');
+    console.log(this.game.sport);
+    game = this.game;
+    console.log(game);
+    this.clickHandler = function(game) {
+      requestGame(game);
     }
+
+      requestGame = function() {
+      // console.log($scope.game);
+      console.log('requesting Game', this.game);
+      console.log( "this here game", this);
+      gameReq.smsNum = this.game.smsNum;
+      gameReq.time = this.game.startTime;
+      gameReq.sport = game.sport;
+      gameReq.location = $scope.game.location;
+
+      GameReq.requestGame(gameReq)
+        .then(function (game) {
+          sharedProps.set(game);
+          $location.path('/games');
+        })
+        .catch(function (error) {
+          console.error('error requesting game ', error);
+        });
+        
+    };
     
   },
   templateUrl: 'app/partials/listViewEntry/listViewEntry.html'

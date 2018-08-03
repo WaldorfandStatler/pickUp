@@ -80,5 +80,9 @@ export default {
       console.error('error fetching all games ', err)
       res.status(500).send('error requesting game');
     });
+  },
+  findField: (req, res, query, next) => {
+    console.log('find field fired');
+
   }
 }

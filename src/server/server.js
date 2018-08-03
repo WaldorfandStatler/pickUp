@@ -25,6 +25,7 @@ app.post('/api/games', gameController.addRequest);
 //Added route to receive all games from the database
 //getAllGames is not written yet
 app.get('/api/games', gameController.getAllGames);
+app.get('api/search', gameController.findField );
 
 app.post('/sms', group.handleSms);
 // app.post('/sms', (req, res) => {

@@ -1,4 +1,7 @@
+
+
 angular.module('listView')
+
   .component('listViewEntry', {
     bindings: {
       game: '<'
@@ -26,3 +29,4 @@ angular.module('listView')
     },
     templateUrl: 'app/partials/listViewEntry/listViewEntry.html'
   })
+

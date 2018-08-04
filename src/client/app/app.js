@@ -1,4 +1,6 @@
-angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView', 'mapView', 'searchField' ])
+
+angular.module('pickUp', ['ui.router', 'gameReqForm', 'games','listView' ])
+
 //look mom, no components
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/index');

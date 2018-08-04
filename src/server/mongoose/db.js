@@ -39,7 +39,7 @@ const db = {
       });
     });
   },
-  //this is probably janked up and broken
+  
   getGames: (res) => {
     console.log('db.getGames fired')
     return new Promise((resolve, reject) => {
